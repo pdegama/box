@@ -1,14 +1,14 @@
 package clientapp
 
 import (
-	"github.com/rellitelink/box/config"
+	"github.com/pdegama/box/config"
 )
 
 func StartClient() {
 	logger := makeLogger()
 
 	amqlConn := getAmqpConn(logger)
-	
+
 	amqlStatus := AmqpStatusPublish{
 		conn:      amqlConn,
 		queueName: config.ConfOpts.Client.Amqp.StatusQueue,

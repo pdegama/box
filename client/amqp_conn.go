@@ -5,9 +5,9 @@ import (
 	"net/url"
 	"os"
 
+	"github.com/pdegama/box/config"
+	"github.com/pdegama/box/pkg/logx"
 	amqp "github.com/rabbitmq/amqp091-go"
-	"github.com/rellitelink/box/config"
-	"github.com/rellitelink/box/pkg/logx"
 )
 
 func getAmqpConn(logger *logx.Log) *amqp.Connection {

@@ -5,9 +5,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rellitelink/box/config"
-	"github.com/rellitelink/box/pkg/logx"
-	"github.com/rellitelink/box/pkg/server"
+	"github.com/pdegama/box/config"
+	"github.com/pdegama/box/pkg/logx"
+	"github.com/pdegama/box/pkg/server"
 )
 
 func StartServer() {

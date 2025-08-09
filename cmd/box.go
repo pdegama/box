@@ -4,18 +4,16 @@ import (
 	"fmt"
 	"os"
 
-	clientapp "github.com/rellitelink/box/client"
-	"github.com/rellitelink/box/config"
-	serverapp "github.com/rellitelink/box/server"
+	clientapp "github.com/pdegama/box/client"
+	"github.com/pdegama/box/config"
+	serverapp "github.com/pdegama/box/server"
 )
-
 
 func main() {
 	mode := os.Getenv("MODE")
 	verbose := os.Getenv("VERBOSE")
 
 	config.LoadConfig()
-	
 
 	if verbose == "true" {
 		fmt.Println(config.ConfOpts)

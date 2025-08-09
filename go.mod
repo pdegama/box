@@ -1,4 +1,4 @@
-module github.com/rellitelink/box
+module github.com/pdegama/box
 
 go 1.23.0
 

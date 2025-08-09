@@ -6,7 +6,7 @@ import (
 	"os"
 	"syscall"
 
-	"github.com/rellitelink/box/pkg/logx"
+	"github.com/pdegama/box/pkg/logx"
 )
 
 func getSocketAddress(network string, address string) (syscall.Sockaddr, int) {

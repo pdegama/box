@@ -4,7 +4,7 @@ import (
 	"net"
 	"sync"
 
-	"github.com/rellitelink/box/pkg/logx"
+	"github.com/pdegama/box/pkg/logx"
 )
 
 type SMTPServer struct {

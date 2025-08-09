@@ -6,10 +6,10 @@ import (
 	"net/url"
 	"os"
 
+	"github.com/pdegama/box/config"
+	"github.com/pdegama/box/pkg/logx"
+	"github.com/pdegama/box/pkg/server"
 	amqp "github.com/rabbitmq/amqp091-go"
-	"github.com/rellitelink/box/config"
-	"github.com/rellitelink/box/pkg/logx"
-	"github.com/rellitelink/box/pkg/server"
 )
 
 type MailFwdBackendAmqp struct {

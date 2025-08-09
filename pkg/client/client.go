@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/rellitelink/box/pkg/logx"
+	"github.com/pdegama/box/pkg/logx"
 )
 
 type SMTPClinet struct {

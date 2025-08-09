@@ -8,9 +8,9 @@ import (
 	"strings"
 	"time"
 
-	limitlinereader "github.com/rellitelink/box/pkg/limit_line_reader"
-	"github.com/rellitelink/box/pkg/logx"
-	"github.com/rellitelink/box/pkg/uid"
+	limitlinereader "github.com/pdegama/box/pkg/limit_line_reader"
+	"github.com/pdegama/box/pkg/logx"
+	"github.com/pdegama/box/pkg/uid"
 )
 
 type MailForwardCode int

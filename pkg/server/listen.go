@@ -3,8 +3,8 @@ package server
 import (
 	"os"
 
-	"github.com/rellitelink/box/pkg/logx"
-	reusesocket "github.com/rellitelink/box/pkg/reuse_socket"
+	"github.com/pdegama/box/pkg/logx"
+	reusesocket "github.com/pdegama/box/pkg/reuse_socket"
 )
 
 func (s *SMTPServer) Listen() {

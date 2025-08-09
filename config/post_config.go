@@ -3,7 +3,7 @@ package config
 import (
 	"os"
 
-	"github.com/rellitelink/box/pkg/logx"
+	"github.com/pdegama/box/pkg/logx"
 )
 
 func postConfigAction() {

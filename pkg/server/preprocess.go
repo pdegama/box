@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/rellitelink/box/pkg/logx"
+	"github.com/pdegama/box/pkg/logx"
 )
 
 var greetReplyMessage []string = []string{} // greet reply message for esmtp/ehlo

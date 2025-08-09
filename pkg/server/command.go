@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/rellitelink/box/pkg/spf"
+	"github.com/pdegama/box/pkg/spf"
 )
 
 type HandleCommandStatus int

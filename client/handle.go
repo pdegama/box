@@ -3,9 +3,9 @@ package clientapp
 import (
 	"time"
 
-	"github.com/rellitelink/box/config"
-	smtpClient "github.com/rellitelink/box/pkg/client"
-	"github.com/rellitelink/box/pkg/logx"
+	"github.com/pdegama/box/config"
+	smtpClient "github.com/pdegama/box/pkg/client"
+	"github.com/pdegama/box/pkg/logx"
 	"gopkg.in/yaml.v3"
 )
 

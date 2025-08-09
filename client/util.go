@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/rellitelink/box/config"
-	"github.com/rellitelink/box/pkg/logx"
+	"github.com/pdegama/box/config"
+	"github.com/pdegama/box/pkg/logx"
 	"gopkg.in/yaml.v3"
 )
 
