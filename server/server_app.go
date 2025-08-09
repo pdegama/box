@@ -51,10 +51,9 @@ func StartServer() {
 		}
 	}
 	logger := logx.NewLogger(logFile)
-	loggerx := *logger
 
 	server.SetMailFwdMethod(&MailFwdBackendAmqp{
-		logger: &loggerx,
+		logger: logger,
 	})
 
 	serverWait := sync.WaitGroup{}

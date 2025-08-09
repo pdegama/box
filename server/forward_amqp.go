@@ -69,7 +69,7 @@ func (mailFwd *MailFwdBackendAmqp) Init() {
 	}
 	mailFwd.queue = queue
 
-	log.Println("Init AMQP Forward method")
+	mailFwd.logger.Info("Init AMQP Forward method")
 }
 
 func (mailFwd *MailFwdBackendAmqp) ForwardMail(email server.Email) {
