@@ -1,6 +1,6 @@
 module github.com/pdegama/box
 
-go 1.23.0
+go 1.24.0
 
 require (
 	github.com/fatih/color v1.17.0
