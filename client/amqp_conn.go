@@ -17,6 +17,8 @@ func getAmqpConn(logger *logx.Log) *amqp.Connection {
 	if err != nil {
 		logger.Error("error on amqp conn: %s", err)
 		os.Exit(1)
+	} else {
+		logger.Info("AMQP Connection Success")
 	}
 
 	return conn

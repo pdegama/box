@@ -40,10 +40,6 @@ func StartServer() {
 		Dev:     config.ConfOpts.Dev,
 	})
 
-	server.SetMailFwdMethod(&MailFwdBackendAmqp{})
-
-	serverWait := sync.WaitGroup{}
-
 	// logger
 	logFile := os.Stdout
 	if !config.ConfOpts.Dev {
@@ -55,6 +51,13 @@ func StartServer() {
 		}
 	}
 	logger := logx.NewLogger(logFile)
+	loggerx := *logger
+
+	server.SetMailFwdMethod(&MailFwdBackendAmqp{
+		logger: &loggerx,
+	})
+
+	serverWait := sync.WaitGroup{}
 
 	// IPv4 listen
 	serverWait.Add(1)
