@@ -50,7 +50,7 @@ func StartServer() {
 			return
 		}
 	}
-	logger := logx.NewLogger(logFile)
+	logger := logx.NewLoggerWithPrefix(logFile, "SERVER")
 
 	server.SetMailFwdMethod(&MailFwdBackendAmqp{
 		logger: logger,

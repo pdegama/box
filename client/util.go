@@ -19,7 +19,7 @@ func makeLogger() *logx.Log {
 			return nil
 		}
 	}
-	logger := logx.NewLoggerWithPrefix(logFile, "EMAIL")
+	logger := logx.NewLoggerWithPrefix(logFile, "CLIENT")
 	return logger
 }
 
