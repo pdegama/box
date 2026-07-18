@@ -71,6 +71,7 @@ func StartServer() {
 
 		smtpServer.SetLogger(logger)
 		smtpServer.Listen()
+		defer smtpServer.Close()
 		smtpServer.AcceptConnections()
 
 	}(&serverWait)
@@ -89,6 +90,7 @@ func StartServer() {
 
 		smtpServer.SetLogger(logger)
 		smtpServer.Listen()
+		defer smtpServer.Close()
 		smtpServer.AcceptConnections()
 
 	}(&serverWait)

@@ -33,3 +33,7 @@ func (s *SMTPServer) AcceptConnections() {
 		go HandleNewConnection(conn, s.logger)
 	}
 }
+
+func (s *SMTPServer) Close() error {
+	return s.listener.Close()
+}
