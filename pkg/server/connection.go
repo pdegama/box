@@ -208,7 +208,7 @@ func (conn *Connection) forward() {
 		email := Email{
 			Success: false,
 			Uid:     fmt.Sprintf("%s_%d", uid, count),
-			Time:    time.Now().UTC().String(),
+			Time:    time.Now().UTC(),
 
 			Cmds: fmt.Sprintf("%d/%d", conn.passCmd, conn.totalCmd),
 			Tls:  conn.useTls,

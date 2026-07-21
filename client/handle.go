@@ -26,7 +26,7 @@ type EmailYAML struct {
 }
 
 type EmailStatus struct {
-	Time           string
+	Time           time.Time
 	Uid            string
 	Success        bool
 	Status         string

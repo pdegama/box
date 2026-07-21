@@ -93,7 +93,7 @@ type ClientServerError struct {
 }
 
 type ClientResponse struct {
-	Time           string
+	Time           time.Time
 	Errors         []ClientServerError
 	Success        bool
 	TempError      bool // temp error (4yz)
@@ -103,7 +103,7 @@ type ClientResponse struct {
 
 func (client *SMTPClinet) SendMail() {
 	client.Size = len(client.data) + 5 // add 5 for <crlf>.<crlf>
-	client.Response.Time = time.Now().UTC().String()
+	client.Response.Time = time.Now().UTC()
 
 	mxRecords := []*net.MX{}
 	if client.RcptHost != "" {

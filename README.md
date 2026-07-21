@@ -72,7 +72,7 @@ dev: false
 mail contine in `receiver` queue. mail is store in yaml format, config receiver queue using config file
 ```yaml
 uid: 1723707191VlKoL1I2_1
-time: 2024-08-15 07:33:11.117449583 +0000 UTC
+time: 2006-01-02T15:04:05Z07:00
 success: true
 cmds: 6/6
 tls: true
@@ -156,7 +156,7 @@ data: |+
 ## Mail Status
 when client send mail than client put status yaml format in `status` queue, config status queue using config file, it is contine success(bool), status, errors, etc...
 ```yaml
-time: 2024-08-15 08:50:35.63294605 +0000 UTC
+time: 2006-01-02T15:04:05Z07:00
 uid: 1723707191VlKoL1I2
 success: true
 status: SUCCESS
@@ -166,7 +166,7 @@ anyclienterror: false
 ```
 When error
 ```yaml
-time: 2024-08-15 08:49:55.52453477 +0000 UTC
+time: 2006-01-02T15:04:05Z07:00
 uid: 1723707191VlKoL1I2
 success: false
 status: FAIL

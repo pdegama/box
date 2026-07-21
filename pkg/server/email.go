@@ -3,6 +3,7 @@ package server
 import (
 	"bytes"
 	"log"
+	"time"
 
 	"github.com/mnako/letters"
 	"gopkg.in/yaml.v3"
@@ -10,9 +11,9 @@ import (
 
 // recive mail structure
 type Email struct {
-	Uid     string `yaml:"uid"`
-	Time    string `yaml:"time"`
-	Success bool   `yaml:"success"`
+	Uid     string    `yaml:"uid"`
+	Time    time.Time `yaml:"time"`
+	Success bool      `yaml:"success"`
 
 	Cmds  string           `yaml:"cmds"`
 	Tls   bool             `yaml:"tls"`
