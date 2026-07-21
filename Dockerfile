@@ -10,6 +10,6 @@ RUN apk add --no-cache ca-certificates tzdata
 WORKDIR /
 COPY --from=build /out/box /usr/local/bin/box
 # config: mount box.yml at /etc/box.yml ; tls keys via a volume (e.g. /keys)
-# MODE=server (default) or MODE=client
+# runs SMTP server and delivery client together in one process
 EXPOSE 25
 CMD ["box"]

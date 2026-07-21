@@ -1,34 +1,18 @@
-# Box SMTP — server (:25) + client (delivery worker) from the same image.
-# Both share one config file (joint volume, mounted at /etc/box.yml).
+# Box SMTP — one container runs both the server (:25) and the client
+# (delivery worker) together.
 #
 #   BOX_CONFIG   = config file to mount        (default: ./config.yml)
 #   BOX_KEYS_DIR = TLS keys dir OUTSIDE the repo, mounted read-only at /keys
 #                  (point tls.key / tls.cert in the config at /keys/...)
 #
-# Host networking: box-server listens directly on host :25 and RabbitMQ is
-# reached via localhost — set a public host in the config if it runs remotely.
+# Host networking: SMTP listens directly on host :25 and RabbitMQ is reached
+# via localhost — set a public host in the config if it runs remotely.
 services:
-  box-server:
+  box:
     build: .
     image: box-smtp
-    container_name: box-server
+    container_name: box
     network_mode: host
-    environment:
-      MODE: server
-    volumes:
-      - ${BOX_CONFIG:-./config.yml}:/etc/box.yml:ro
-      - ${BOX_KEYS_DIR:-./keys}:/keys:ro
-      - box-log:/log
-    restart: unless-stopped
-
-  box-client:
-    image: box-smtp
-    container_name: box-client
-    network_mode: host
-    depends_on:
-      - box-server
-    environment:
-      MODE: client
     volumes:
       - ${BOX_CONFIG:-./config.yml}:/etc/box.yml:ro
       - ${BOX_KEYS_DIR:-./keys}:/keys:ro
