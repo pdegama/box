@@ -1,0 +1,48 @@
+# Box SMTP — server (:25) + client (delivery worker) from the same image.
+# Both share one config file (joint volume, mounted at /etc/box.yml).
+#
+#   BOX_CONFIG   = config file to mount        (default: ./config.yml)
+#   BOX_KEYS_DIR = TLS keys dir OUTSIDE the repo, mounted read-only at /keys
+#                  (point tls.key / tls.cert in the config at /keys/...)
+#
+# Uses the shared external 'mailtro' network so 'rabbitmq' from the mailtro
+# infra compose resolves by name; create it once:  docker network create mailtro
+# If RabbitMQ runs elsewhere, set its public host in the config file.
+services:
+  box-server:
+    build: .
+    image: box-smtp
+    container_name: box-server
+    environment:
+      MODE: server
+    ports:
+      - "25:25"
+    volumes:
+      - ${BOX_CONFIG:-./config.yml}:/etc/box.yml:ro
+      - ${BOX_KEYS_DIR:-./keys}:/keys:ro
+      - box-log:/log
+    networks:
+      - mailtro
+    restart: unless-stopped
+
+  box-client:
+    image: box-smtp
+    container_name: box-client
+    depends_on:
+      - box-server
+    environment:
+      MODE: client
+    volumes:
+      - ${BOX_CONFIG:-./config.yml}:/etc/box.yml:ro
+      - ${BOX_KEYS_DIR:-./keys}:/keys:ro
+      - box-log:/log
+    networks:
+      - mailtro
+    restart: unless-stopped
+
+volumes:
+  box-log:
+
+networks:
+  mailtro:
+    external: true
